@@ -1,0 +1,15 @@
+kube-controller-manager \
+--logtostderr=false \
+--v=2 \
+--log-dir=/opt/kubernetes/logs \
+--leader-elect=true \
+--kubeconfig=/opt/kubernetes/cfg/kube-controller-manager.kubeconfig \
+--bind-address=127.0.0.1 \
+--allocate-node-cidrs=true \
+--cluster-cidr=10.80.0.0/12 \
+--service-cluster-ip-range=10.255.0.0/16 \
+--cluster-signing-cert-file=/home/ubuntu/coroutines/pki/ca.pem \
+--cluster-signing-key-file=/home/ubuntu/coroutines/pki/ca-key.pem \
+--root-ca-file=/home/ubuntu/coroutines/pki/ca.pem \
+--service-account-private-key-file=/home/ubuntu/coroutines/pki/ca-key.pem \
+--experimental-cluster-signing-duration=87600h0m0s
