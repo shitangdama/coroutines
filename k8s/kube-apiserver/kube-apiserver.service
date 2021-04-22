@@ -32,5 +32,4 @@ ExecStart=/usr/bin/kube-apiserver \
 
 
 [Install]
-WantedBy=multi-user.target
-~                                  
+WantedBy=multi-user.target                        

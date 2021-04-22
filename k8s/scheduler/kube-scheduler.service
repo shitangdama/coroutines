@@ -1,0 +1,17 @@
+[Unit]
+Description=Kubernetes Scheduler
+Documentation=https://github.com/kubernetes/kubernetes
+
+[Service]
+ExecStart=/usr/bin/kube-scheduler \
+--address=127.0.0.1 \
+--kubeconfig=/home/ubuntu/coroutines/pki/config.kubeconfig \
+--leader-elect=true \
+--alsologtostderr=true \
+--logtostderr=false \
+--log-dir=/var/log/kubernetes \
+--v=2
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
