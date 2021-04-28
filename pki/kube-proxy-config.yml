@@ -1,0 +1,8 @@
+kind: KubeProxyConfiguration
+apiVersion: kubeproxy.config.k8s.io/v1alpha1
+bindAddress: 0.0.0.0
+metricsBindAddress: 0.0.0.0:10249
+clientConnection:
+  kubeconfig: /home/ubuntu/coroutines/pki/kubelet.kubeconfig
+hostnameOverride: vm-0-2-ubuntu
+clusterCIDR: 10.255.0.0/16

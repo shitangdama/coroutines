@@ -21,7 +21,7 @@ https://blog.csdn.net/qq_34857250/article/details/84995381
 关于啊
 kubectl create clusterrolebinding kubelet-bootstrap --clusterrole=system:node-bootstrapper --user=kubelet-bootstrap
 
-
+kubectl create clusterrolebinding system-node-role-bound --clusterrole=system:node --group=system:nodes
 
 $ kubectl certificate approve node-csr-QzuuQiuUfcSdp3j5W4B2UOuvQ_n9aTNHAlrLzVFiqrk
 certificatesigningrequest.certificates.k8s.io "node-csr-QzuuQiuUfcSdp3j5W4B2UOuvQ_n9aTNHAlrLzVFiqrk" approved

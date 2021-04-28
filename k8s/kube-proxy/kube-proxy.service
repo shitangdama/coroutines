@@ -1,0 +1,15 @@
+[Unit]
+Description=Kubernetes Proxy
+After=network.target
+
+[Service]
+ExecStart=/opt/kubernetes/bin/kube-proxy \
+--logtostderr=true \
+--v=2 \
+--config=/home/ubuntu/coroutines/pki/kube-proxy-config.yaml \
+--kubeconfig=/home/ubuntu/coroutines/pki/kube-proxy.kubeconfig
+Restart=on-failure
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target
