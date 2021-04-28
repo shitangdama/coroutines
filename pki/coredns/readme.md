@@ -37,6 +37,10 @@ clusterIP为：10.255.0.2（kubelet配置文件中的clusterDNS）
 
 
     kubectl scale deployment coredns -n kube-system --replicas=0
+    kubectl run -it --rm dns-test --image=busybox:1.28.4 sh
+    kubectl run tmp-shell --rm -i --tty --image nicolaka/netshoot -- /bin/bash
+
+
 
 
     https://www.codenong.com/jsba6d4c63c1ef/

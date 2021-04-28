@@ -3,7 +3,7 @@ Description=Kubernetes Proxy
 After=network.target
 
 [Service]
-ExecStart=/opt/kubernetes/bin/kube-proxy \
+ExecStart=/usr/bin/kube-proxy \
 --logtostderr=true \
 --v=2 \
 --config=/home/ubuntu/coroutines/pki/kube-proxy-config.yaml \
