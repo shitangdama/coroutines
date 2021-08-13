@@ -4,3 +4,4 @@
 etcdctl -–endpoints=http://127.0.0.1:2379 endpoint status
 
 etcdctl --endpoints=127.0.0.1:2379 member list
+

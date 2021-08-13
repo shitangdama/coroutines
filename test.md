@@ -20,3 +20,6 @@ sudo systemctl enable kube-manager-controller
 
 
 在说Cgroupfs与Systemd之间的区别之前
+
+
+批量修改label
