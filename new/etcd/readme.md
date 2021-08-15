@@ -59,7 +59,7 @@ https://www.cnblogs.com/hujinzhong/p/14648961.html
 scp -rp etcd ubuntu@xxxx:etcd
 
 
-
+--endpoints=
 
 member add		Adds a member into the cluster
 
@@ -71,3 +71,6 @@ etcdctl put foo "Hello World!"
 
 etcdctl get foo
 etcdctl --write-out="json" get foo
+
+
+https://etcd.io/docs/v3.5/demo/
