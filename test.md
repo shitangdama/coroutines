@@ -23,3 +23,4 @@ sudo systemctl enable kube-manager-controller
 
 
 批量修改label
+https://zhuanlan.zhihu.com/p/106719192?utm_source=wechat_session
