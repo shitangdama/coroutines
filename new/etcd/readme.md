@@ -71,3 +71,24 @@ etcdctl put foo "Hello World!"
 
 etcdctl get foo
 etcdctl --write-out="json" get foo
+
+
+etcdctl --endpoints=$ENDPOINTS put web1 value1
+etcdctl --endpoints=$ENDPOINTS put web2 value2
+etcdctl --endpoints=$ENDPOINTS put web3 value3
+
+etcdctl --endpoints=$ENDPOINTS get web --prefix
+
+
+
+etcdctl --endpoints=$ENDPOINTS put key myvalue
+etcdctl --endpoints=$ENDPOINTS del key
+
+etcdctl --endpoints=$ENDPOINTS put k1 value1
+etcdctl --endpoints=$ENDPOINTS put k2 value2
+etcdctl --endpoints=$ENDPOINTS del k --prefix
+
+事务写入
+
+https://etcd.io/docs/v3.5/demo/#transactional-write
+

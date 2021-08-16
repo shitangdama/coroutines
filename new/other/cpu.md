@@ -1,0 +1,1 @@
+https://blog.kelu.org/tech/2021/07/15/kubelet-bond-pod-with-physical-core.html
