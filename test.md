@@ -41,3 +41,9 @@ https://www.cnblogs.com/yyxx8888/p/10521196.html
 https://blog.csdn.net/m0_38138879/article/details/117111578
 
 https://github.com/shitangdama/gin-demo/blob/master/nfs/nfs.md
+https://zhuanlan.zhihu.com/p/106719192?utm_source=wechat_session
+
+
+pstack
+
+iostat
