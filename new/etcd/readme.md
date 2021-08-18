@@ -59,7 +59,7 @@ https://www.cnblogs.com/hujinzhong/p/14648961.html
 scp -rp etcd ubuntu@xxxx:etcd
 
 
-
+--endpoints=
 
 member add		Adds a member into the cluster
 
@@ -92,3 +92,4 @@ etcdctl --endpoints=$ENDPOINTS del k --prefix
 
 https://etcd.io/docs/v3.5/demo/#transactional-write
 
+https://etcd.io/docs/v3.5/demo/
