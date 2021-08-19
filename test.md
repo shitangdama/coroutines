@@ -74,3 +74,12 @@ iostat
 
 https://blog.csdn.net/fly0512/article/details/117886282
 https://www.jianshu.com/p/b02c428950df
+
+如果 hosts 字段不为空则需要指定授权使用该证书的 IP 或域名列表。由于该证书被 集群使用，需要将节点的IP都填上，为了方便后期扩容可以多写几个预留的IP。同时还需要填写 service 网络的首个IP(一般是 kube-apiserver 指定的 service-cluster-ip-range 网段的第一个IP，如 10.96.0.1)。
+
+
+cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=kubernetes kube-apiserver-csr.json | cfssljson -bare kube-apiserver
+
+cat > token.csv << EOF
+$(head -c 16 /dev/urandom | od -An -t x | tr -d ' '),kubelet-bootstrap,10001,"system:kubelet-bootstrap"
+EOF
