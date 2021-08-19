@@ -20,3 +20,30 @@ sudo systemctl enable kube-manager-controller
 
 
 在说Cgroupfs与Systemd之间的区别之前
+
+
+批量修改label
+
+
+关于CrashLoopBackOff
+
+
+nfs 和 glusterfs 
+
+https://www.hellodemos.com/hello-glusterfs/glusterfs-gluster-quick-start-1.html
+https://zhuanlan.zhihu.com/p/51553441
+https://www.cnblogs.com/saneri/p/12378121.html
+
+
+nfs 
+https://www.cnblogs.com/yyxx8888/p/10521196.html
+
+https://blog.csdn.net/m0_38138879/article/details/117111578
+
+https://github.com/shitangdama/gin-demo/blob/master/nfs/nfs.md
+https://zhuanlan.zhihu.com/p/106719192?utm_source=wechat_session
+
+
+pstack
+
+iostat

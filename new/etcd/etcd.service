@@ -1,0 +1,18 @@
+[Unit]
+Description=Etcd Server
+After=network.target
+After=network-online.target
+Wants=network-online.target
+Documentation=https://github.com/etcd-io/etcd
+[Service]
+Type=notify
+LimitNOFILE=1024000
+LimitNPROC=1024000
+LimitCORE=infinity
+LimitMEMLOCK=infinity
+User=etcd
+Group=etcd
+WorkingDirectory=${ETCD_DATA_DIR}
+EnvironmentFile=-${ETCD_PATH}/conf/etcd
+ExecStart=${ETCD_PATH}/bin/etcd \$ETCD_OPTS
+Restart=on-failure
