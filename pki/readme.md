@@ -29,3 +29,5 @@ cp kubernetes/server/bin/kube* /usr/bin/
 chmod a+x /usr/bin/kube*
 
 关于生成
+
+
