@@ -1,0 +1,35 @@
+[Unit]
+Description=Kubernetes API Server
+Documentation=https://github.com/kubernetes/kubernetes
+
+[Service]
+Type=notify
+ExecStart=/usr/bin/kube-apiserver \
+--enable-admission-plugins=NamespaceLifecycle,NodeRestriction,LimitRanger,ServiceAccount,DefaultStorageClass,ResourceQuota \
+--bind-address=172.17.0.2 \
+--secure-port=6443 \
+--advertise-address=172.17.0.2 \
+--authorization-mode=Node,RBAC \
+--enable-bootstrap-token-auth=true \
+--token-auth-file=/home/ubuntu/coroutines/pki/token.csv \
+--service-cluster-ip-range=10.255.0.0/16 \
+--service-node-port-range=6000-52766 \
+--tls-cert-file=/home/ubuntu/coroutines/pki/kubernetes.pem  \
+--tls-private-key-file=/home/ubuntu/coroutines/pki/kubernetes-key.pem \
+--client-ca-file=/home/ubuntu/coroutines/pki/ca.pem \
+--kubelet-client-certificate=/home/ubuntu/coroutines/pki/kubernetes.pem \
+--kubelet-client-key=/home/ubuntu/coroutines/pki/kubernetes-key.pem \
+--service-account-key-file=/home/ubuntu/coroutines/pki/ca-key.pem \
+--etcd-servers=http://127.0.0.1:2379 \
+--enable-swagger-ui=true \
+--allow-privileged=true \
+--audit-log-maxage=30 \
+--audit-log-maxbackup=3 \
+--audit-log-maxsize=100 \
+--audit-log-path=/home/ubuntu/logs/audit.log \
+--event-ttl=1h \
+--logtostderr=true --v=2 
+
+
+[Install]
+WantedBy=multi-user.target                        

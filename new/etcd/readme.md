@@ -42,15 +42,6 @@ Restart=on-failure
 
 
 
--name etcd2 
--advertise-client-urls http://0.0.0.0:2379 
--listen-client-urls http://0.0.0.0:2379 
--listen-peer-urls http://0.0.0.0:2380 
--initial-cluster-token etcd-cluster 
--initial-cluster "etcd1=http://etcd1:2380,etcd2=http://etcd2:2380,etcd3=http://etcd3:2380" 
--initial-cluster-state new
-
-
 https://www.cnblogs.com/hujinzhong/p/14648961.html
 
 研究出怎么换主，更换master数量
@@ -64,8 +55,8 @@ scp -rp etcd ubuntu@xxxx:etcd
 member add		Adds a member into the cluster
 
 
-etcdctl endpoint status --write-out=table
-
+ 
+etcdctl endpoint status --endpoints=$ENDPOINTS --write-out=table
 
 etcdctl put foo "Hello World!"
 

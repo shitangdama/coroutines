@@ -3,16 +3,22 @@ Description=Etcd Server
 After=network.target
 After=network-online.target
 Wants=network-online.target
-Documentation=https://github.com/etcd-io/etcd
+Documentation=https://github.com/coreos
 [Service]
 Type=notify
-LimitNOFILE=1024000
-LimitNPROC=1024000
-LimitCORE=infinity
-LimitMEMLOCK=infinity
-User=etcd
-Group=etcd
-WorkingDirectory=${ETCD_DATA_DIR}
-EnvironmentFile=-${ETCD_PATH}/conf/etcd
-ExecStart=${ETCD_PATH}/bin/etcd \$ETCD_OPTS
+ExecStart=/usr/bin/etcd \
+--name=etcd-1  \
+--data-dir=/var/lib/etcd/ \
+--initial-advertise-peer-urls http://10.206.0.12:2380 \
+--listen-peer-urls http://10.206.0.12:2380 \
+--advertise-client-urls http://10.206.0.12:2379 \
+--listen-client-urls http://10.206.0.12:2379 \
+--initial-cluster etcd-1=http://10.206.0.12:2380,etcd-2=http://10.206.0.16:2380,etcd-3=http://10.206.0.17:2380 \
+--initial-cluster-state new \
+--initial-cluster-token etcd-token
 Restart=on-failure
+RestartSec=5
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target
