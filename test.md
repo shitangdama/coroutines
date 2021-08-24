@@ -83,3 +83,8 @@ cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=kube
 cat > token.csv << EOF
 $(head -c 16 /dev/urandom | od -An -t x | tr -d ' '),kubelet-bootstrap,10001,"system:kubelet-bootstrap"
 EOF
+
+https://blog.csdn.net/xuejianxinokok/article/details/119604432
+https://blog.csdn.net/fly0512/article/details/117886282
+
+升级到1.22

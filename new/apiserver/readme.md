@@ -28,16 +28,17 @@ ExecStart=/usr/bin/kube-apiserver \
 --tls-private-key-file=/home/ubuntu/cert/kubernetes-key.pem \
 
 --client-ca-file=/home/ubuntu/cert/ca.pem \
+
+
 <!-- --kubelet-client-xxx：apiserver访问kubelet客户端证书 -->
 --kubelet-client-certificate=/home/ubuntu/cert/kubernetes.pem \
 --kubelet-client-key=/home/ubuntu/cert/kubernetes-key.pem \
 
 --service-account-key-file=/home/ubuntu/certca-key.pem \
-
-<!-- 是做什么的 -->
 --service-account-signing-key-file=/opt/kubernetes/ssl/server-key.pem \\
---service-account-key-file=/opt/kubernetes/ssl/ca-key.pem \\
 --service-account-issuer=api \\
+
+
 
 --etcd-servers=http://10.206.0.12:2379,http://10.206.0.16:2379,http://10.206.0.17:2379 \
 --enable-swagger-ui=true \
