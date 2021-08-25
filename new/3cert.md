@@ -38,3 +38,27 @@ cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=kube
 
 # controller-manager
 cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=kubernetes kube-controller-manager-csr.json | cfssljson -bare kube-controller-manager
+
+
+# kubectl
+
+cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=kubernetes admin-csr.json | cfssljson -bare admin
+
+KUBE_CONFIG="/home/ubuntu/.kube/config"
+KUBE_APISERVER="http://10.206.16.11:6443"
+
+kubectl config set-cluster kubernetes \
+  --certificate-authority=/home/ubuntu/cert/ca.pem \
+  --embed-certs=true \
+  --server=${KUBE_APISERVER} \
+  --kubeconfig=${KUBE_CONFIG}
+kubectl config set-credentials cluster-admin \
+  --client-certificate=/home/ubuntu/cert/admin.pem \
+  --client-key=/home/ubuntu/cert/admin-key.pem \
+  --embed-certs=true \
+  --kubeconfig=${KUBE_CONFIG}
+kubectl config set-context default \
+  --cluster=kubernetes \
+  --user=cluster-admin \
+  --kubeconfig=${KUBE_CONFIG}
+kubectl config use-context default --kubeconfig=${KUBE_CONFIG}

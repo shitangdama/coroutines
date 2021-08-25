@@ -58,9 +58,9 @@ ENDPOINTS="http://10.206.16.11:2380,http://10.206.16.3:2380,http://10.206.16.12:
  
 etcdctl endpoint status --endpoints=$ENDPOINTS --write-out=table
 
-etcdctl put foo "Hello World!"
+etcdctl put --endpoints=$ENDPOINTS foo "Hello World!"
 
-etcdctl get foo
+etcdctl get etcdctl put --endpoints=$ENDPOINTS foo "Hello World!" foo
 etcdctl --write-out="json" get foo
 
 

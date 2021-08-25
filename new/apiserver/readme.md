@@ -68,3 +68,7 @@ ExecStart=/usr/bin/kube-apiserver \
 Kubernetes 集群中Service 的虚拟IP 地址段范围，以CIDR 格式表示，例如169.169.0.0/16，该IP 范围不能与物理机的真实IP 段有重合。
 
 
+ETCDCTL_API=3 etcdctl get "" --prefix --keys-only |grep -Ev "^$"
+etcdctl del --prefix ""
+
+有些数据有问题可能是etcd没有清空导致恶的
