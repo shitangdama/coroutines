@@ -54,7 +54,7 @@ scp -rp etcd ubuntu@xxxx:etcd
 
 member add		Adds a member into the cluster
 
-
+ENDPOINTS="http://10.206.16.11:2380,http://10.206.16.3:2380,http://10.206.16.12:2380"
  
 etcdctl endpoint status --endpoints=$ENDPOINTS --write-out=table
 

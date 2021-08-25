@@ -87,8 +87,8 @@ ENDPOINTS=$HOST_1:2379,$HOST_2:2379,$HOST_3:2379
 
 
 CLUSTER=etcd-1=http://10.206.0.12:2380,etcd-2=http://10.206.0.16:2380,etcd-3=http://10.206.0.17:2380
-
-etcdctl endpoint status --endpoints=http://10.206.0.12:2379,http://10.206.0.16:2379,http://10.206.0.17:2379 --write-out=table
+ENDPOINTS="http://10.206.16.11:2380,http://10.206.16.3:2380,http://10.206.16.12:2380"
+etcdctl endpoint status --endpoints=http://10.206.16.11:2380,http://10.206.16.3:2380,http://10.206.16.12:2380 --write-out=table
 
 
 vim /usr/lib/systemd/system/etcd.service
