@@ -1,5 +1,5 @@
 KUBE_CONFIG="/home/ubuntu/cert/kube-controller-manager.kubeconfig"
-KUBE_APISERVER="http://10.206.16.11:6443"
+KUBE_APISERVER="https://10.206.16.11:6443"
 
 kubectl config set-cluster kubernetes \
   --certificate-authority=/home/ubuntu/cert/ca.pem \
