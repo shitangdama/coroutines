@@ -1,0 +1,14 @@
+[Unit]
+Description=Kubernetes Kubelet
+Documentation=https://github.com/kubernetes/kubernetes
+After=docker.service
+Requires=docker.service
+
+[Service]
+EnvironmentFile=/home/ubuntu/kubelet/kubelet.conf
+ExecStart=/usr/bin/kubelet $KUBELET_OPTS
+Restart=on-failure
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target

@@ -28,3 +28,8 @@ sudo systemctl start kube-scheduler
 sudo systemctl restart kube-scheduler
 sudo systemctl enable --now kube-scheduler
 sudo systemctl status kube-scheduler
+
+
+https://kubernetes.io/zh/docs/reference/access-authn-authz/rbac/
+
+CN 为 system:kube-scheduler、O 为 system:kube-scheduler，kubernetes 内置的 ClusterRoleBindings system:kube-scheduler 将赋予 kube-scheduler 工作所需的权限。

@@ -46,6 +46,9 @@ cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=kube
 # kube-scheduler
 cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=kubernetes kube-scheduler-csr.json | cfssljson -bare kube-scheduler
 
+# kube-proxy
+cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=kubernetes kube-proxy-csr.json | cfssljson -bare kube-proxy
+
 
 KUBE_CONFIG="/home/ubuntu/.kube/config"
 KUBE_APISERVER="https://10.206.16.11:6443"

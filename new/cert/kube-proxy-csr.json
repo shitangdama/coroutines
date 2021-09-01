@@ -1,5 +1,5 @@
 {
-  "CN": "system:kube-scheduler",
+  "CN": "system:kube-proxy",
   "hosts": [],
   "key": {
     "algo": "rsa",
@@ -10,7 +10,7 @@
       "C": "CN",
       "ST": "ShangHai",
       "L": "ShangHai",
-      "O": "k8s",
+      "O": "system:masters",
       "OU": "System"
     }
   ]
